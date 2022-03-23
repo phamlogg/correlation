@@ -30,3 +30,6 @@
 
 
 ![Hình file input](/pics/3.png)
+
+- Bước 4: Sau khi nhập dữ liệu, xong, mở folder dist -> mở file script và đợi
+- Bước 5: Kết quả nằm ở sheet 2 trong file Output.xlsx
