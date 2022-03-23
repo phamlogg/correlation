@@ -1,6 +1,6 @@
 #	Correlation
 
-###[ENG]
+### [ENG]
 
 ####Python script to calculate correlation between assets
  
@@ -8,8 +8,8 @@
  You may alter cells highlighted yellow. All else should not be touched, otherwise result maybe inaccurate.
  All assets should have same time period.
 
-###[VN]
-####Script tính correlation giữa các tài sản
+### [VN]
+#### Script tính correlation giữa các tài sản
 
 ##### Cách sử dụng:
 - Bước 1: Cài đặt công cụ cần thiết:
@@ -30,9 +30,3 @@
 
 
 ![Hình file input](/pics/3.png)
-
-
-- 
-# correlation
-# correlation
-# correlation
