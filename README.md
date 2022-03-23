@@ -30,7 +30,7 @@
 	- Phía dưới cột 'Open' và 'Close' lần lượt là giá mở cửa và giá đóng cửa của tài sản đó
 
 
-![Hình file input](/../pics/3.png)
+![Hình file input](/pics/3.png)
 
 
 - 
