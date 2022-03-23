@@ -16,13 +16,12 @@
 	- Trên Windows: Mở Powershell (Shell) hoặc Command Prompt (CMD) và nhập `python` rồi nhấn enter
 		- Nếu trên Command Promt hoặc Powershell chuyển sang '>>>' thì chỉ cần thoát khỏi Shell hoặc CMD.
 		- Nếu chưa có Python trên máy thì máy sẽ tự động mở Microsoft Store và từ đó hãy chọn Python version cao nhất và free (tại thời điểm viết bài này là 3.10).
+		- 
 - Bước 2: Di chuyển tới thu mục Correlation
 	- Mở folder 'dist' và mở file setup
 	- Đợi setup hoàn tất 
 		
-
-
-- Bước 1: Mở file Data.xlsx ở thu mực Correlation và nhập dữ liệu theo hướng dẫn
+- Bước 3: Mở file Data.xlsx ở thu mực Correlation và nhập dữ liệu theo hướng dẫn
 
 	- **Chỉ nhập dữ liệu vào những ô màu vàng, còn lại không được phép thay đổi, bao gồm cả tên file 'Data.xlsx'**
 	- Nhập tên tài sản vào các cell A1, E1, I1, ...
