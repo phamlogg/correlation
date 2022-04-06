@@ -3,8 +3,12 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,macos
 
 # Files to ignore
-/Users/long/git_repo/correlation/Data.xlsx
-/Users/long/git_repo/correlation/Output.xlsx
+/Data.xlsx
+/Output.xlsx
+/Data.numbers
+/Output.numbers
+/script.spec
+/setup.spec
 
 ### macOS ###
 # General
