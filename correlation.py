@@ -1,6 +1,11 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+import enum
+
+from tables import Column
+
+
 try:
     from functions import *
     from unicodedata import name
@@ -10,6 +15,7 @@ try:
     import itertools
     from sys import argv
     from openpyxl.styles import Font
+    from openpyxl.worksheet.dimensions import ColumnDimension
 except Exception as e:
     print(e)
     exit(1)
@@ -92,11 +98,14 @@ else:
 # Display stdev
 ws2 = wb1.create_sheet(title= "Output")
 
-title = ["Name", "Standard Dev.", "Pair", "-0.3 << 0.3", "Pair", "-0.5 << 0.5"]
+titles = ["NAME", "ST.DEV", "PAIR", "-0.3 << 0.3", "PAIR", "-0.5 << 0.5"]
 
-for i in range(1,7):
-    cell = ws2.cell(row=1,column=i)
-    cell.value = title[i - 1]
+for i, title in enumerate(titles):
+    col_letter = op.utils.cell.get_column_letter(i+1)
+    ws2.column_dimensions[col_letter] = ColumnDimension(ws2, bestFit=True)
+    if title == 'PAIR':
+        ws2.column_dimensions[col_letter].width = 18.0
+    ws2.cell(row=1,column=i+1).value = title    
 
 i = 2
 for k, v in stdev_dict.items():
