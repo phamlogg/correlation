@@ -15,15 +15,15 @@ def list_assets(ws):
     j = 1
     for i in range(1, ws1.max_column + 2):
         cell = ws1.cell(row = 1, column= i)
-        if cell.value != 'Open' and cell.value != 'Close' and cell.value != None:
-            name.append(cell.value) 
-        if cell.value == None:
+        if cell.value != None:
+            cell.value = cell.value.strip().lower()
+            if cell.value != 'open' and cell.value != 'close':
+                name.append(cell.value.upper()) 
+        elif cell.value == None:
             cell.value = 'Delta' + " " + str(j)
             j+=1
 
     return name
-
-
 
 def calc_delta(ws):
     ws1 = ws
