@@ -7,6 +7,7 @@ try:
     import pandas as pd
     import openpyxl as op
     import os
+    import platform
     import itertools
     from sys import argv
     from openpyxl.styles import Font
@@ -42,7 +43,10 @@ def main():
     else:
         print('Liệt kê tài sản thành công!')
 
-    new_path = path.replace('/Data.xlsx', '/Output.xlsx')
+    if platform.system() == 'Windows':
+        new_path = path.replace('\Data.xlsx', '\Output.xlsx')
+    else:
+        new_path = path.replace('/Data.xlsx', '/Output.xlsx')
 
     # Tính delta
     try:

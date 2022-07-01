@@ -1,5 +1,7 @@
 import os
+import platform
 
-
-
-os.system(f'python3 /Users/*/*/correlation/correlation.py /Users/*/*/correlation/Data.xlsx')
+if platform.system() == 'Windows':
+    os.system(f'python3 \Users\*\*\correlation\correlation.py \Users\*\*\correlation\Data.xlsx')
+else:
+    os.system(f'python3 /Users/*/*/correlation/correlation.py /Users/*/*/correlation/Data.xlsx')
