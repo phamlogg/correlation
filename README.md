@@ -26,10 +26,10 @@
 	- **Chỉ nhập dữ liệu vào những ô màu vàng, còn lại không được phép thay đổi, bao gồm cả tên file 'Data.xlsx'**
 	- Nhập tên tài sản vào các cell A1, E1, I1, ...
 	- Phía dưới tên tài sản là mốc thời gian, cái này optional có thể nhập hoặc bổ trống đều được
-	- Phía dưới cột 'Open' và 'Close' lần lượt là giá mở cửa và giá đóng cửa của tài sản đó
+	- Phía dưới cột 'Open' và 'Close' lần lượt là giá mở cửa và giá đóng cửa theo từng mốc thời gian của tài sản đó
 
 
 ![Hình file input](/pics/3.png)
 
-- Bước 4: Sau khi nhập dữ liệu, xong, mở folder dist -> mở file script và đợi
-- Bước 5: Kết quả nằm ở sheet 2 trong file Output.xlsx
+- Bước 4: Sau khi nhập dữ liệu, xong, mở app.exe -> ấn 'open excel file' và tìm đến file Data.xlsx ở trên
+- Bước 5: File Output.xlsx sẽ được lưu tại cùng nơi với file Data.xlsx. Kết quả nằm trong sheet 'Output'
