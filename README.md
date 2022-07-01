@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #	Correlation
 
 ### [ENG]
@@ -34,7 +33,3 @@
 
 - Bước 4: Sau khi nhập dữ liệu, xong, mở folder dist -> mở file script và đợi
 - Bước 5: Kết quả nằm ở sheet 2 trong file Output.xlsx
-=======
-# correlation
-Python script to calculate correlation-coefficient between assets for allocation
->>>>>>> fbedc37facf804f12ea6cb761a70654c9931c5b9
