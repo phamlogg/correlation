@@ -36,3 +36,30 @@ def calc_delta(ws):
                 break
             else :
                 cell.value = (float(close.value) - float(open.value))/float(open.value) # Tính delta 
+
+def calc_stdev(df, name, delta):
+    """
+        function tính standard deviation của từng tài sản
+        @param: 
+            df: input worksheet
+            name: tên tài sản
+            delta: cột delta - daily change của tài sản đó
+        return:
+            dictionary key: tên tài sản - value: std. dev. tài sản đó
+    """
+
+    std = []
+
+    for i in range(len(df.columns)):
+        if 'Delta' in df.columns[i]:
+            delta.append(df.columns[i]) #Pick ra các cột số delta
+
+
+    for i in range(0, len(delta)):
+        column = df[str(delta[i])]
+        stdev = column.std()
+        std.append(stdev)
+
+    stdev_dict = dict(zip(name,std))
+
+    return stdev_dict
