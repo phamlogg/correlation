@@ -15,7 +15,7 @@ except:
 filepath = os.path.abspath('correlation-main')
 
 try:
-	req = os.system(f'pipreqs {filepath}')
+	req = os.system(f'pipreqs --encoding utf-8')
 except Exception as e:
 	print(e)
 	
