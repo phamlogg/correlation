@@ -1,2 +1,3 @@
-requirements.txt
-data.xlsx
+*.txt
+*.xlsx
+__pycache__
