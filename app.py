@@ -21,16 +21,17 @@ def open_file():
         Label(win, text="The File is located at : " + str(filepath), font=('Aerial 11')).pack()
 
     if platform.system() == 'Windows':
-        os.system(f'python3 \\Users\\*\\*\\correlation\\correlation.py {filepath}')
+        os.system(f'python {os.path.abspath("correlation.py")} {filepath}')
     else:
-        os.system(f'python3 /Users/*/*/correlation/correlation.py {filepath}')
+        os.system(f'cd {filepath.replace("Data.xlsx","")}')
+        os.system(f'python3 {os.path.abspath("correlation.py")} {filepath}')
 
 # Add a Label widget
-label = Label(win, text="Click the Button to browse the Files", font=('Georgia 13'))
+label = Label(win, text="Click the Button to browse Excel File", font=('Georgia 13'))
 label.pack(pady=10)
 
 # Create a Button
-ttk.Button(win, text="Browse", command=open_file).pack(pady=20)
+ttk.Button(win, text="Open Excel File", command=open_file).pack(pady=20)
 ttk.Button(win, text="Quit", command=sys.exit).pack(pady=20)
 
 win.mainloop()

@@ -155,15 +155,16 @@ def main():
         for cell in row:
             for row in ws2.iter_rows(min_row=3, min_col=3, max_row=len(ws2['C']), max_col=3):
                 for cell1 in row:
-                    if cell.value[:6] == cell1.value[:6]:
-                        pair = cell.value[:6]
-                        pair1 = cell.value[7:]
-                        pair2 = cell1.value[7:]
-                        try:
-                            if -0.3 <= correlation_dict[f'{pair1}-{pair2}'] <= 0.3:
-                                triplet.append(f'{pair}-{pair1}-{pair2}')
-                        except KeyError:
-                            continue
+                    if cell.value != None and cell1.value != None:
+                        if cell.value[:6] == cell1.value[:6]:
+                            pair = cell.value[:6]
+                            pair1 = cell.value[7:]
+                            pair2 = cell1.value[7:]
+                            try:
+                                if -0.3 <= correlation_dict[f'{pair1}-{pair2}'] <= 0.3:
+                                    triplet.append(f'{pair}-{pair1}-{pair2}')
+                            except KeyError:
+                                continue
 
     for index, triple in enumerate(triplet, 2):
         for row in ws2.iter_rows(min_row=int(index), min_col=7, max_row=len(triplet), max_col=7):

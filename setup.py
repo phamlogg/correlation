@@ -12,12 +12,15 @@ try:
 except:
 	print('Error!')
 
+filepath = os.path.abspath('correlation-main')
 
-req = os.system('pipreqs .')
-
+try:
+	req = os.system(f'pipreqs --encoding utf-8')
+except Exception as e:
+	print(e)
+	
 if req == 0:
 	try:
 		os.system('pip install -r requirements.txt')
 	except FileNotFoundError:
 		print('requirements.txt not found!')
-
