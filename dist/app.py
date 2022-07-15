@@ -23,11 +23,7 @@ def open_file():
     if platform.system() == 'Windows':
         os.system(f'python {os.path.abspath("correlation.py")} {filepath}')
     else:
-<<<<<<< HEAD:app.py
-        os.system(f'cd {filepath.replace("Data.xlsx","")}')
-=======
->>>>>>> 25b54282818aa9a05011d91d9cd79dcf7f49c47f:dist/app.py
-        os.system(f'python3 {os.path.abspath("correlation.py")} {filepath}')
+        os.system(f'python3 /users/long/git_repo/correlation-main/correlation.python {filepath}')
 
 # Add a Label widget
 label = Label(win, text="Click the Button to browse Excel File", font=('Georgia 13'))
