@@ -3,12 +3,10 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,macos
 
 # Files to ignore
-/Data.xlsx
-/Output.xlsx
-/Data.numbers
-/Output.numbers
-/script.spec
-/setup.spec
+*.xlsx
+*.numbers
+*.txt
+
 
 ### macOS ###
 # General

@@ -14,7 +14,7 @@ import openpyxl as op
 import os
 import platform
 import itertools
-from sys import argv
+import time
 from openpyxl.styles import Font
 from openpyxl.worksheet.dimensions import ColumnDimension
 
@@ -194,9 +194,11 @@ def main():
 
     if os.path.isfile(new_path) is True:
         print('Success!')
+        time.sleep(5)
         sys.exit(0)
     else:
         print('Unsuccessful!')
+        time.sleep(5)
         sys.exit(1)
 
 main()
