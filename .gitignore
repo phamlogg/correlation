@@ -3,7 +3,7 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,macos
 
 # Files to ignore
-*.xlsx
+Output.xlsx
 *.numbers
 *.txt
 
