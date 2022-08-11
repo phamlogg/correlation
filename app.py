@@ -96,7 +96,7 @@ def main():
     # Display stdev
     ws2 = wb1.create_sheet(title= "Output")
 
-    titles = ["NAME", "ST.DEV", "PAIR", "-0.3 << 0.3", "PAIR", "-0.5 << 0.5"]
+    titles = ["NAME", "ST.DEV", "PAIR", "-0.3 << 0.3", "PAIR", "-0.5 << 0.5","0.3 & 0.3","0.3 & 0.5","0.5 & 0.3","0.5 & 0.5"]
 
     for i, title in enumerate(titles):
         col_letter = op.utils.cell.get_column_letter(i+1)
@@ -169,6 +169,9 @@ def main():
         print('Ghép correlation thành công!')
 
     triplet = []
+    triplet1 = []
+    triplet2 = []
+    triplet3 = []
 
     for row in ws2.iter_rows(min_row=2, min_col=3, max_row=len(ws2['C']), max_col=3):
         for cell in row:
@@ -182,14 +185,64 @@ def main():
                             try:
                                 if -0.3 <= correlation_dict[f'{pair1}-{pair2}'] <= 0.3:
                                     triplet.append(f'{pair}-{pair1}-{pair2}')
+                                if -0.5 <= correlation_dict[f'{pair1}-{pair2}'] < -0.3 or 0.3 < correlation_dict[f'{pair1}-{pair2}'] <= 0.5:
+                                    triplet1.append(f'{pair}-{pair1}-{pair2}')
+                            except KeyError:
+                                continue
+
+    for row in ws2.iter_rows(min_row=2, min_col=5, max_row=len(ws2['E']), max_col=5):
+        for cell in row:
+            for row in ws2.iter_rows(min_row=3, min_col=5, max_row=len(ws2['E']), max_col=5):
+                for cell1 in row:
+                    if cell.value != None and cell1.value != None:
+                        if cell.value[:6] == cell1.value[:6]:
+                            pair = cell.value[:6]
+                            pair1 = cell.value[7:]
+                            pair2 = cell1.value[7:]
+                            try:
+                                if -0.3 <= correlation_dict[f'{pair1}-{pair2}'] <= 0.3:
+                                    triplet2.append(f'{pair}-{pair1}-{pair2}')
+                                if -0.5 <= correlation_dict[f'{pair1}-{pair2}'] < -0.3 or 0.3 < correlation_dict[f'{pair1}-{pair2}'] <= 0.5:
+                                    triplet3.append(f'{pair}-{pair1}-{pair2}')
                             except KeyError:
                                 continue
 
     for index, triple in enumerate(triplet, 2):
         for row in ws2.iter_rows(min_row=int(index), min_col=7, max_row=len(triplet), max_col=7):
             for cell in row:
-                cell.value = triplet[index - 2]
+                try:
+                    cell.value = triplet[index - 2]
+                except Exception as e:
+                    print(e)
+                    continue
+
+    for index, triple in enumerate(triplet1, 2):
+        for row in ws2.iter_rows(min_row=int(index), min_col=8, max_row=len(triplet1), max_col=8):
+            for cell in row:
+                try:
+                    cell.value = triplet1[index - 2]
+                except Exception as e:
+                    print(e)
+                    continue
+
+    for index, triple in enumerate(triplet2, 2):
+        for row in ws2.iter_rows(min_row=int(index), min_col=9, max_row=len(triplet2), max_col=9):
+            for cell in row:
+                try:
+                    cell.value = triplet2[index - 2]
+                except Exception as e:
+                    print(e)
+                    continue
         
+    for index, triple in enumerate(triplet3, 2):
+        for row in ws2.iter_rows(min_row=int(index), min_col=10, max_row=len(triplet3), max_col=10):
+            for cell in row:
+                try:
+                    cell.value = triplet3[index - 2]
+                except Exception as e:
+                    print(e)
+                    continue
+
     wb1.save(new_path)
 
     if os.path.isfile(new_path) is True:
